@@ -1,20 +1,20 @@
 import { Model } from 'mongoose';
 import { Component } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-// import { Cat } from './interfaces/cat.interface';
-// import { CreateCatDto } from './dto/create-cat.dto';
-import { CatSchema } from './models/usuario.schema';
+import { Usuario } from '../interfaces/usuario.interface';
+import { CreateUserDto } from '../dtos/create-user.dto';
+import { UsuarioSchema } from '../models/usuario.schema';
 
 @Component()
 export class CatsService {
-  constructor(@InjectModel(CatSchema) private readonly catModel: Model<Cat>) {}
+  constructor(@InjectModel(UsuarioSchema) private readonly usuarioModel: Model<Usuario>) {}
 
-  async create(createCatDto: CreateCatDto): Promise<Cat> {
-    const createdCat = new this.catModel(createCatDto);
-    return await createdCat.save();
+  async create(createUserDto: CreateUserDto): Promise<Usuario> {
+    const createdUser = new this.usuarioModel(createUserDto);
+    return await createdUser.save();
   }
 
-  async findAll(): Promise<Cat[]> {
-    return await this.catModel.find().exec();
+  async findAll(): Promise<Usuario[]> {
+    return await this.usuarioModel.find().exec();
   }
 }
