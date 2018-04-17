@@ -1,17 +1,17 @@
-
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
-import { CreateUserDto } from '../dtos/create-user.dto';
+import { UsuarioDto } from '../dtos/user.dto';
 import { UsuarioService } from '../services/usuario.service';
 import { Usuario } from '../interfaces/usuario.interface';
 
 @Controller(UsuarioController.URL)
 export class UsuarioController {
     static URL: string = 'usuario';
+
     constructor(private readonly usuarioService: UsuarioService) {}
 
     @Post()
-    async create(@Body() createUserDto: CreateUserDto) {
-        this.usuarioService.create(createUserDto);
+    async create(@Body() usuarioDto: UsuarioDto) {
+        this.usuarioService.create(usuarioDto);
     }
 
     @Get()
