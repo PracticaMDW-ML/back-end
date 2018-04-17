@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
-import { HabitacionController } from './controllers/habitacion.controller';
-import { HabitacionService } from './services/habitacion.service';
-import { HabitacionSchema } from './schemas/habitacion.schema';
+import { HabitacionController } from './habitacion.controller';
+import { HabitacionService } from './habitacion.service';
+import { HabitacionSchema } from './habitacion.schema';
 
 @Module({
   imports: [MongooseModule.forFeature([{ name: 'Habitacion', schema: HabitacionSchema }])],

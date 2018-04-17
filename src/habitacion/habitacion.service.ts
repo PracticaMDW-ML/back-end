@@ -1,10 +1,10 @@
 import { Component } from '@nestjs/common';
-import { HabitacionDto } from '../dtos/habitacion.dto';
-import { Habitacion } from '../interfaces/habitacion.interface';
-import { HabitacionSchema } from '../schemas/habitacion.schema';
+import { HabitacionDto } from './habitacion.dto';
+import { Habitacion } from './habitacion.interface';
+import { HabitacionSchema } from './habitacion.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { TipoHabitacion } from '../interfaces/tipoHabitacion.enum';
+import { TipoHabitacion } from './tipoHabitacion.enum';
 
 @Component()
 export class HabitacionService {

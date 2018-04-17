@@ -1,8 +1,8 @@
 import { Controller, Get, Post, Body, Param } from '@nestjs/common';
-import { HabitacionDto } from '../dtos/habitacion.dto';
-import { Habitacion } from '../interfaces/habitacion.interface';
-import { HabitacionService } from '../services/habitacion.service';
-import { TipoHabitacion } from 'interfaces/tipoHabitacion.enum';
+import { HabitacionDto } from './habitacion.dto';
+import { Habitacion } from './habitacion.interface';
+import { HabitacionService } from './habitacion.service';
+import { TipoHabitacion } from 'habitacion/tipoHabitacion.enum';
 
 @Controller(HabitacionController.URL)
 export class HabitacionController {
