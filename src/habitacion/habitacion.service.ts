@@ -1,18 +1,18 @@
 import { Component } from '@nestjs/common';
-import { CreateHabitacionDto } from '../dtos/create-habitacion.dto';
-import { Habitacion } from '../interfaces/habitacion.interface';
-import { HabitacionSchema } from '../schemas/habitacion.schema';
+import { HabitacionDto } from './habitacion.dto';
+import { Habitacion } from './habitacion.interface';
+import { HabitacionSchema } from './habitacion.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { TipoHabitacion } from '../interfaces/tipoHabitacion.enum';
+import { TipoHabitacion } from './tipoHabitacion.enum';
 
 @Component()
 export class HabitacionService {
     constructor(@InjectModel(HabitacionSchema) private readonly habitacionModel: Model<Habitacion>) {}
 
-    async create(createHabitacionDto: CreateHabitacionDto): Promise<Habitacion> {
-        const createdHabitacion = new this.habitacionModel(createHabitacionDto);
-        return await createdHabitacion.save();
+    async create(habitacionDto: HabitacionDto): Promise<Habitacion> {
+        const habitacion = new this.habitacionModel(habitacionDto);
+        return await habitacion.save();
     }
 
     async findAll(): Promise<Habitacion[]> {
@@ -20,12 +20,12 @@ export class HabitacionService {
     }
 
     createAuto() {
-        const createHabitacionDto: CreateHabitacionDto = {
+        const habitacion: Habitacion = {
             servicios: ['TV', 'Minibar', 'Aire Acondicionado'],
             precioHora: 23,
             imagen: 'http://www.sdfsdfsfdsfsddf.com',
             tipoHabitacion: TipoHabitacion.INDIVIDUAL,
         };
-        this.create(createHabitacionDto);
+        this.create(habitacion);
     }
 }

@@ -1,6 +1,6 @@
-import { TipoHabitacionEnum } from '../interfaces/tipoHabitacion.enum';
+import { TipoHabitacionEnum } from './tipoHabitacion.enum';
 
-export class CreateHabitacionDto {
+export class HabitacionDto {
     readonly servicios: string[];
     readonly precioHora: number;
     readonly imagen: string;

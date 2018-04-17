@@ -1,17 +1,17 @@
 import { Model } from 'mongoose';
 import { Component } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Usuario } from '../interfaces/usuario.interface';
-import { CreateUserDto } from '../dtos/create-user.dto';
-import { UsuarioSchema } from '../schemas/usuario.schema';
+import { Usuario } from './usuario.interface';
+import { UsuarioDto } from './user.dto';
+import { UsuarioSchema } from './usuario.schema';
 
 @Component()
 export class UsuarioService {
   constructor(@InjectModel(UsuarioSchema) private readonly usuarioModel: Model<Usuario>) {}
 
-  async create(createUserDto: CreateUserDto): Promise<Usuario> {
-    const createdUser = new this.usuarioModel(createUserDto);
-    return await createdUser.save();
+  async create(userDto: UsuarioDto): Promise<Usuario> {
+    const user = new this.usuarioModel(userDto);
+    return await user.save();
   }
 
   async findAll(): Promise<Usuario[]> {
