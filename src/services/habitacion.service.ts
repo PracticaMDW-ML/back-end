@@ -4,6 +4,7 @@ import { Habitacion } from '../interfaces/habitacion.interface';
 import { HabitacionSchema } from '../schemas/habitacion.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { TipoHabitacion } from '../interfaces/tipoHabitacion.enum';
 
 @Component()
 export class HabitacionService {
@@ -16,5 +17,15 @@ export class HabitacionService {
 
     async findAll(): Promise<Habitacion[]> {
         return await this.habitacionModel.find().exec();
+    }
+
+    createAuto() {
+        const createHabitacionDto: CreateHabitacionDto = {
+            servicios: ['TV', 'Minibar', 'Aire Acondicionado'],
+            precioHora: 23,
+            imagen: 'http://www.sdfsdfsfdsfsddf.com',
+            tipoHabitacion: TipoHabitacion.INDIVIDUAL,
+        };
+        this.create(createHabitacionDto);
     }
 }

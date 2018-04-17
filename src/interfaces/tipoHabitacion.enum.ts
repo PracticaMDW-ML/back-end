@@ -1,4 +1,4 @@
-export enum TipoHabitacionEnum {
+export enum TipoHabitacion {
     INDIVIDUAL,
     DOBLE,
     TRIPLE,
