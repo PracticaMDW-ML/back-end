@@ -5,4 +5,5 @@ export const HotelSchema = new mongoose.Schema({
     direccion: String,
     director: String,
     imagen: String,
+    listaHabitaciones: [{ type: mongoose.Schema.ObjectId, ref: 'Habitacion' }],
 });
