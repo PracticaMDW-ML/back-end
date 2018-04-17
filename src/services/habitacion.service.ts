@@ -1,9 +1,10 @@
-import { Model } from 'mongoose';
 import { Component } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
-import { Habitacion } from '../interfaces/habitacion.interface';
 import { CreateHabitacionDto } from '../dtos/create-habitacion.dto';
+import { Habitacion } from '../interfaces/habitacion.interface';
 import { HabitacionSchema } from '../models/habitacion.schema';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
+
 
 @Component()
 export class HabitacionService {
