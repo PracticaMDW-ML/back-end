@@ -6,7 +6,7 @@ import { CreateHabitacionDto } from '../dtos/create-habitacion.dto';
 import { HabitacionSchema } from '../models/habitacion.schema';
 
 @Component()
-export class CatsService {
+export class HabitacionService {
     constructor(@InjectModel(HabitacionSchema) private readonly habitacionModel: Model<Habitacion>) {}
 
     async create(createHabitacionDto: CreateHabitacionDto): Promise<Habitacion> {
