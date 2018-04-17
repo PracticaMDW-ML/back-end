@@ -5,7 +5,7 @@ import { Usuario } from './usuario.interface';
 
 @Controller(UsuarioController.URL)
 export class UsuarioController {
-    static URL: string = 'usuario';
+    static URL: string = 'usuarios';
 
     constructor(private readonly usuarioService: UsuarioService) {}
 
