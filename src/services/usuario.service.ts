@@ -3,10 +3,10 @@ import { Component } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Usuario } from '../interfaces/usuario.interface';
 import { CreateUserDto } from '../dtos/create-user.dto';
-import { UsuarioSchema } from '../models/usuario.schema';
+import { UsuarioSchema } from '../schemas/usuario.schema';
 
 @Component()
-export class CatsService {
+export class UsuarioService {
   constructor(@InjectModel(UsuarioSchema) private readonly usuarioModel: Model<Usuario>) {}
 
   async create(createUserDto: CreateUserDto): Promise<Usuario> {

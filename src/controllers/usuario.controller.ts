@@ -9,13 +9,13 @@ export class UsuarioController {
     static URL: string = 'usuario';
     constructor(private readonly usuarioService: UsuarioService) {}
 
-    @Post()
-    async create(@Body() createCatDto: CreateUserDto) {
+@Post()
+async create(@Body() createCatDto: CreateUserDto) {
     this.usuarioService.create(createCatDto);
-  }
+}
 
-  @Get()
-  async findAll(): Promise<Usuario[]> {
+@Get()
+async findAll(): Promise<Usuario[]> {
     return this.usuarioService.findAll();
-  }
+}
 }
