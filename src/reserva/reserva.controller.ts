@@ -25,7 +25,7 @@ export class ReservaController {
     }
 
     @Patch(ReservaController.ID)
-    async updatePago(@Param()param): Promise<Reserva>{
-        return this.reservaService.updatePago(param.id);
+    async updatePayment(@Param() param): Promise<Reserva> {
+        return this.reservaService.updatePayment(param.id);
     }
 }
