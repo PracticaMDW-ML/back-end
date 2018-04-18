@@ -4,7 +4,7 @@ import {HabitacionService} from './habitacion/habitacion.service';
 @Controller()
 export class AppController {
   @Get()
-  root(@Inject('HabitacionService') habitacionService: HabitacionService): string {
+  root(): string {
     return 'Hello World!';
   }
 }
