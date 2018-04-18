@@ -26,7 +26,7 @@ export class HabitacionController {
             servicios: ['TV', 'Minibar', 'Aire Acondicionado'],
             precioHora: 23,
             imagen: 'http://www.sdfsdfsfdsfsddf.com',
-            tipoHabitacion: 'INDIVIDUAL',
+            tipoHabitacion: TipoHabitacion.INDIVIDUAL,
         };
         this.create(habitacionDto);
     }
