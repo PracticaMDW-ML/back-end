@@ -6,7 +6,7 @@ import { Hotel } from './hotel.interface';
 @Controller(HotelController.URL)
 export class HotelController {
     static URL: string = 'hoteles';
-    static POBLAR: string = 'poblar';
+    static ID: string = ':id';
     constructor(private readonly hotelService: HotelService){}
 
     @Post()
@@ -14,9 +14,9 @@ export class HotelController {
         this.hotelService.create(hotelDto);
     }
 
-    @Get(':id')
-    async findOne(@Param() name): Promise<Hotel[]> {
-        return this.hotelService.findOne(name);
+    @Get(HotelController.ID)
+    async findOne(@Param() param): Promise<Hotel[]> {
+        return this.hotelService.findById(param.id);
     }
 
     @Get()
