@@ -17,4 +17,13 @@ export class UsuarioService {
   async findAll(): Promise<Usuario[]> {
     return await this.usuarioModel.find().exec();
   }
+
+  async findById(id: string): Promise<Usuario> {
+      return await this.usuarioModel.findById(id).exec();
+  }
+
+  async findByUsername(username: string): Promise<Usuario> {
+      const usuario: Usuario = await this.usuarioModel.findOne({username}).exec();
+      return usuario;
+  }
 }

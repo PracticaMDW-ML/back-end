@@ -6,6 +6,7 @@ import { ReservaService } from './reserva.service';
 @Controller(ReservaController.URL)
 export class ReservaController {
     static URL: string = 'reservas';
+
     constructor(private readonly reservaService: ReservaService) {}
 
     @Post()
