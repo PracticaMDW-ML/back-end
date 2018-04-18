@@ -6,7 +6,6 @@ import { ReservaService } from './reserva.service';
 @Controller(ReservaController.URL)
 export class ReservaController {
     static URL: string = 'reservas';
-    static POBLAR: string = 'poblar';
     constructor(private readonly reservaService: ReservaService) {}
 
     @Post()
@@ -14,21 +13,8 @@ export class ReservaController {
         this.reservaService.create(reservaDto);
     }
 
-    @Get(this.POBLAR)
+    @Get()
     async findAll(): Promise<Reserva[]> {
-        this.createAuto();
         return this.reservaService.findAll();
-    }
-
-    createAuto() {
-        const reservaDto: ReservaDto = {
-            fechaEntrada: new Date(),
-            fechaSalida: new Date(),
-            precio: 0,
-            abonada: false,
-            usuario: null,
-            habitacion: null,
-        };
-        this.create(reservaDto);
     }
 }
