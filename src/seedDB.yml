@@ -1,0 +1,92 @@
+# Habitaciones
+Habitacion:
+- &habitacion0
+    servicios: [TV, Minibar, Plancha]
+    precioHora: 12
+    imagen: https://www.fotohabitacion0.com
+- &habitacion1
+    servicios: [Aire Acondicionado, Mascota]
+    precioHora: 9
+    imagen: https://www.fotohabitacion1.com
+- &habitacion2
+    servicios: [TV, Canal+, Champan, Despertador]
+    precioHora: 13
+    imagen: https://www.fotohabitacion2.com
+
+# Usuarios
+Usuario:
+- &usuario0
+    usuario: diego69
+    password: diego69
+    correo: diego69@msn.com
+- &usuario1
+    usuario: amandaVallecas
+    password: amandaVallecas
+    correo: amandaVallecas@hotmail.com
+- &usuario2
+    usuario: pabloLopez11
+    password: pabloLopez11
+    correo: pabloLopez11@yahoo.com
+    
+# Reservas
+Reserva:
+- &reserva0
+    fechaEntrada: 2018-01-06 12:00:00
+    fechaSalida: 2018-01-06 18:00:00  
+    precio: 36
+    abonada: false
+    habitacion: *habitacion0
+    usuario: *usuario0
+- &reserva1
+    fechaEntrada: 2018-02-06 11:00:00
+    fechaSalida: 2018-02-06 12:00:00  
+    precio: 100
+    abonada: true
+    habitacion: *habitacion1
+    usuario: *usuario1
+- &reserva2
+    fechaEntrada: 2018-03-06 15:00:00
+    fechaSalida: 2018-03-06 17:00:00  
+    precio: 24
+    abonada: true
+    habitacion: *habitacion2
+    usuario: *usuario2
+    
+# Hoteles
+Hotel:
+- &hotel0
+    nombre: NH Madrid
+    direccion: c/Alameda de Osuna
+    director: Diego Perez Escribano
+    imagen: https://www.fotohotel0.com
+    habitacionesList:
+      - *habitacion0
+      - *habitacion1
+      - *habitacion2
+- &hotel1
+    nombre: NH Barcelona
+    direccion: Av. de las cortes
+    director: Patricia Aviles Conde
+    imagen: https://www.fotohotel1.com
+    habitacionesList:
+      - *habitacion0
+      - *habitacion1
+      - *habitacion2
+- &hotel2
+    nombre: NH Bilbao
+    direccion: c/Txiki Bengoextchea
+    director: Diego Perez Escribano
+    imagen: https://www.fotohotel2.com
+    habitacionesList:
+      - *habitacion0
+      - *habitacion1
+      - *habitacion2
+      
+# Cadenas
+Cadena:
+- &cadena0
+    nombre: NH Group
+    hotelesList:
+      - *hotel0
+      - *hotel1
+      - *hotel2
