@@ -1,8 +1,8 @@
-import { TipoHabitacionEnum } from './tipoHabitacion.enum';
+import { TipoHabitacion } from './tipoHabitacion.enum';
 
 export class HabitacionDto {
     readonly servicios: string[];
     readonly precioHora: number;
     readonly imagen: string;
-    readonly tipoHabitacion: TipoHabitacionEnum;
+    readonly tipoHabitacion: TipoHabitacion;
 }
