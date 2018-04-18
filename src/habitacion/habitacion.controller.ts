@@ -7,7 +7,6 @@ import { TipoHabitacion } from 'habitacion/tipoHabitacion.enum';
 @Controller(HabitacionController.URL)
 export class HabitacionController {
     static URL: string = 'habitaciones';
-    static POBLAR: string = 'poblar';
     constructor(private readonly habitacionService: HabitacionService) {}
 
     @Post()
