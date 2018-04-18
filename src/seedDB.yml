@@ -3,17 +3,17 @@ habitacions:
 - &habitacion0
     servicios: [TV, Minibar, Plancha]
     precioHora: 12
-    imagen: https://www.fotohabitacion0.com
+    imagen: https://t-ec.bstatic.com/images/hotel/max1024x768/622/62263233.jpg
     tipoHabitacion: SUITE
 - &habitacion1
     servicios: [Aire Acondicionado, Mascota]
     precioHora: 9
-    imagen: https://www.fotohabitacion1.com
+    imagen: https://s-ec.bstatic.com/images/hotel/max1024x768/359/35939159.jpg
     tipoHabitacion: INDIVIDUAL
 - &habitacion2
     servicios: [TV, Canal+, Champan, Despertador]
     precioHora: 13
-    imagen: https://www.fotohabitacion2.com
+    imagen: https://s-ec.bstatic.com/images/hotel/max1024x768/622/62200988.jpg
     tipoHabitacion: DOBLE
 
 # Usuarios
