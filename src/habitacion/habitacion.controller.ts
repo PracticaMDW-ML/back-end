@@ -15,7 +15,7 @@ export class HabitacionController {
         this.habitacionService.create(habitacionDto);
     }
 
-    @Get(this.POBLAR)
+    @Get('poblar')
     async findAll(): Promise<Habitacion[]> {
         this.createAuto();
         return this.habitacionService.findAll();

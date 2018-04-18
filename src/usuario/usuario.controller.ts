@@ -15,7 +15,7 @@ export class UsuarioController {
         this.usuarioService.create(usuarioDto);
     }
 
-    @Get()
+    @Get(UsuarioController.POBLAR)
     async findAll(): Promise<Usuario[]> {
         this.createAuto();
         return this.usuarioService.findAll();
