@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param } from '@nestjs/common';
 import { HotelService } from './hotel.service';
 import { HotelDto } from './hotel.dto';
 import { Hotel } from './hotel.interface';
@@ -14,7 +14,17 @@ export class HotelController {
         this.hotelService.create(hotelDto);
     }
 
-    @Get('poblar')
+    @Get(':id')
+    async findOne(@Param() name): Promise<Hotel[]> {
+        return this.hotelService.findOne(name);
+    }
+
+    @Get()
+    async findAll(): Promise<Hotel[]> {
+        return this.hotelService.findAll();
+    }
+
+    /*@Get('poblar')
     async findAll(): Promise<Hotel[]> {
         this.createAuto();
         return this.hotelService.findAll();
@@ -29,5 +39,5 @@ export class HotelController {
             listaHabitaciones: null,
         };
         this.create(hotelDto);
-    }
+    }*/
 }
