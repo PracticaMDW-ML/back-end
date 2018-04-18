@@ -14,9 +14,8 @@ export class HotelController {
         this.hotelService.create(hotelDto);
     }
 
-    @Get('poblar')
+    @Get()
     async findAll(): Promise<Hotel[]> {
-        this.createAuto();
         return this.hotelService.findAll();
     }
 
