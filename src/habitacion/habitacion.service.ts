@@ -18,7 +18,7 @@ export class HabitacionService {
     async findAll(): Promise<Habitacion[]> {
         return await this.habitacionModel.find().exec();
     }
-
+    
     createAuto() {
         const habitacion: Habitacion = {
             servicios: ['TV', 'Minibar', 'Aire Acondicionado'],
