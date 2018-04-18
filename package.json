@@ -21,6 +21,7 @@
     "@nestjs/websockets": "^4.5.8",
     "dookie": "^0.2.0",
     "jasmine": "^3.1.0",
+    "js-yaml": "^3.11.0",
     "karma-cli": "^1.0.1",
     "karma-jasmine-html-reporter": "^1.0.0",
     "mongoose": "^5.0.15",
