@@ -17,4 +17,13 @@ export class ReservaService {
     async findAll(): Promise<Reserva[]> {
         return await this.reservaModel.find().exec();
     }
+
+    async findById(id: string): Promise<Reserva> {
+        return await this.reservaModel.findById(id).exec();
+    }
+
+    async updatePago(id: string): Promise<Reserva>{
+        const reserva = this.reservaModel.findById(id).exec();
+        reserva.
+    }
 }
