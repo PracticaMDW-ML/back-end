@@ -23,21 +23,4 @@ export class HotelController {
     async findAll(): Promise<Hotel[]> {
         return this.hotelService.findAll();
     }
-
-    /*@Get('poblar')
-    async findAll(): Promise<Hotel[]> {
-        this.createAuto();
-        return this.hotelService.findAll();
-    }
-
-    createAuto(){
-        const hotelDto: HotelDto = {
-            nombre: 'NH',
-            direccion: 'Madrid',
-            director: 'Raquel',
-            imagen: 'http://nhimagen.jpg',
-            listaHabitaciones: null,
-        };
-        this.create(hotelDto);
-    }*/
 }
