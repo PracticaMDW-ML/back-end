@@ -4,14 +4,17 @@ Habitacion:
     servicios: [TV, Minibar, Plancha]
     precioHora: 12
     imagen: https://www.fotohabitacion0.com
+    tipoHabitacion: SUITE
 - &habitacion1
     servicios: [Aire Acondicionado, Mascota]
     precioHora: 9
     imagen: https://www.fotohabitacion1.com
+    tipoHabitacion: INDIVIDUAL
 - &habitacion2
     servicios: [TV, Canal+, Champan, Despertador]
     precioHora: 13
     imagen: https://www.fotohabitacion2.com
+    tipoHabitacion: DOBLE
 
 # Usuarios
 Usuario:
