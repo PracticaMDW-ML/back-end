@@ -7,7 +7,7 @@ import { TipoHabitacion } from 'habitacion/tipoHabitacion.enum';
 @Controller(HabitacionController.URL)
 export class HabitacionController {
     static URL: string = 'habitaciones';
-
+    static POBLAR: string = 'poblar';
     constructor(private readonly habitacionService: HabitacionService) {}
 
     @Post()
@@ -15,7 +15,7 @@ export class HabitacionController {
         this.habitacionService.create(habitacionDto);
     }
 
-    @Get()
+    @Get(this.POBLAR)
     async findAll(): Promise<Habitacion[]> {
         this.createAuto();
         return this.habitacionService.findAll();

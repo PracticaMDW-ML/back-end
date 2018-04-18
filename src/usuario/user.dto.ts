@@ -1,5 +1,5 @@
 export class UsuarioDto {
     readonly usuario: string;
-    readonly password: number;
-    readonly correo: string;
+    readonly password: string;
+    readonly email: string;
   }
