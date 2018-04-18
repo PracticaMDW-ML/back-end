@@ -1,6 +1,6 @@
 export enum TipoHabitacion {
-    INDIVIDUAL,
-    DOBLE,
-    TRIPLE,
-    SUITE,
+    INDIVIDUAL = 'INDIVIDUAL',
+    DOBLE = 'DOBLE',
+    TRIPLE = 'TRIPLE',
+    SUITE = 'SUITE',
 }

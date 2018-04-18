@@ -5,7 +5,6 @@ import {HabitacionService} from './habitacion/habitacion.service';
 export class AppController {
   @Get()
   root(@Inject('HabitacionService') habitacionService: HabitacionService): string {
-    habitacionService.createAuto();
     return 'Hello World!';
   }
 }
