@@ -1,5 +1,5 @@
 # Habitaciones
-habitacionesList:
+Habitacion:
 - &habitacion0
     servicios: [TV, Minibar, Plancha]
     precioHora: 12
@@ -14,7 +14,7 @@ habitacionesList:
     imagen: https://www.fotohabitacion2.com
 
 # Usuarios
-usuariosList:
+Usuario:
 - &usuario0
     usuario: diego69
     password: diego69
@@ -29,7 +29,7 @@ usuariosList:
     correo: pabloLopez11@yahoo.com
     
 # Reservas
-reservasList:
+Reserva:
 - &reserva0
     fechaEntrada: 2018-01-06 12:00:00
     fechaSalida: 2018-01-06 18:00:00  
@@ -53,7 +53,7 @@ reservasList:
     usuario: *usuario2
     
 # Hoteles
-hotelesList:
+Hotel:
 - &hotel0
     nombre: NH Madrid
     direccion: c/Alameda de Osuna
@@ -83,7 +83,7 @@ hotelesList:
       - *habitacion2
       
 # Cadenas
-cadenasList:
+Cadena:
 - &cadena0
     nombre: NH Group
     hotelesList:
