@@ -1,4 +1,4 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, Res } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { UsuarioDto } from '../usuario/user.dto';
 
@@ -9,12 +9,14 @@ export class AuthController {
     constructor(private readonly authService: AuthService) {}
 
     @Post()
-    async authenticate(@Body() usuarioDto: UsuarioDto): Promise<any> {
+    async authenticate(@Res() res, @Body() usuarioDto: UsuarioDto): Promise<any> {
         const exito: boolean = await this.authService.validateUser(usuarioDto.usuario);
+        let token;
         if (exito) {
-            return await this.authService.createToken(usuarioDto.usuario);
-        } else {
-            return null;
+            token = await this.authService.createToken(usuarioDto.usuario);
         }
+        return new Promise((resolve, reject) => {
+            resolve(token);
+        });
     }
 }

@@ -22,8 +22,8 @@ export class UsuarioService {
       return await this.usuarioModel.findById(id).exec();
   }
 
-  async findByUsername(username: string): Promise<Usuario> {
-      const usuario: Usuario = await this.usuarioModel.findOne({username}).exec();
-      return usuario;
+  async findByUsername(usuario: string): Promise<Usuario> {
+      const username: Usuario = await this.usuarioModel.findOne({usuario}).exec();
+      return username;
   }
 }
