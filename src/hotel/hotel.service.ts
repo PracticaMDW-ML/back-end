@@ -15,7 +15,7 @@ export class HotelService{
     }
 
     async findAll(): Promise<Hotel[]> {
-        return await this.hotelModel.find().exec();
+        return await this.hotelModel.find();
     }
 
     async findById(id: string): Promise<Hotel[]> {

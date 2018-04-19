@@ -1,10 +1,10 @@
-import { HabitacionModule } from 'habitacion/habitacion.module';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { UsuarioModule } from './usuario/usuario.module';
 import { HotelModule } from './hotel/hotel.module';
 import { CadenaModule } from './cadena/cadena.module';
 import { ReservaModule } from './reserva/reserva.module';
+import { HabitacionModule } from 'habitacion/habitacion.module';
 
 const USER_BD = 'hotelporhoras';
 const PASSWORD_BD = 'hotelporhoras';
