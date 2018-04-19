@@ -9,7 +9,7 @@ export class AuthController {
     constructor(private readonly authService: AuthService) {}
 
     @Post()
-    async authenticate(@Res() res, @Body() usuarioDto: UsuarioDto): Promise<any> {
+    async authenticate(@Body() usuarioDto: UsuarioDto): Promise<any> {
         const exito: boolean = await this.authService.validateUser(usuarioDto.usuario);
         let token;
         if (exito) {
