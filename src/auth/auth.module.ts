@@ -3,8 +3,10 @@ import { Module, NestModule, MiddlewaresConsumer, RequestMethod } from '@nestjs/
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
 import { AuthController } from './auth.controller';
+import {UsuarioModule} from '../usuario/usuario.module';
 
 @Module({
+    imports: [UsuarioModule],
     components: [AuthService, JwtStrategy],
     controllers: [AuthController],
 })

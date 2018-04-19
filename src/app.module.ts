@@ -14,12 +14,12 @@ const MONGODB_URI = `mongodb://${USER_BD}:${PASSWORD_BD}@ds247499.mlab.com:47499
 @Module({
   imports: [
       MongooseModule.forRoot(MONGODB_URI),
-      AuthModule,
       CadenaModule,
       HabitacionModule,
       HotelModule,
       UsuarioModule,
       ReservaModule,
+      AuthModule,
   ],
 })
 export class AppModule {
