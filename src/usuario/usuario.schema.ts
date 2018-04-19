@@ -1,7 +1,7 @@
-import * as mongoose from 'mongoose';
+import {Schema} from 'mongoose';
 
-export const UsuarioSchema = new mongoose.Schema({
-    usuario: String,
-    password: String,
-    email: String,
+export const UsuarioSchema: Schema = new Schema({
+    usuario: {type: String},
+    password: {type: String},
+    email: {type: String},
 });
