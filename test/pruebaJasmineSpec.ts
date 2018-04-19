@@ -8,11 +8,12 @@ import request = require('supertest');
 describe('something', () => {
     const peticion = request.agent('http://localhost:3008');
 
-    it('should work', () => {
+    it('should work', (done) => {
         peticion.get('/hoteles/5ad7a1b15b87860488c0422c')
         .end((err, res) => {
             console.log(res.body.nombre);
-            expect('NH Madri').to.equal(res.body.nombre);
+            expect('NH Madrid').to.equal(res.body.nombre);
+            done();
         });
 
         // let hotel: Hotel;
