@@ -10,7 +10,7 @@ async function bootstrap() {
   app.use(logger('dev'));
   app.use(cors());
   app.use(expressStatusMonitor()); // http://localhost:3000/status
-  await app.listen(3010);
+  await app.listen(3000);
 }
 
 bootstrap();
