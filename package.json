@@ -11,7 +11,7 @@
     "start:prod": "node dist/main.js",
     "test": "jest",
     "test:karma": "karma start",
-    "test:mocha": "mocha -r ts-node/register test/pruebaJasmineSpec.ts"
+    "test:mocha": "mocha -r ts-node/register src/**/*Spec.ts"
   },
   "dependencies": {
     "@nestjs/common": "^4.5.9",
