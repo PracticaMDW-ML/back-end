@@ -1,9 +1,9 @@
-import { expect } from "chai";
-import request = require("supertest");
+import { expect } from 'chai';
+import request = require('supertest');
 
-describe("something", () => {
-  const port: string = "3000";
-  const peticion = request.agent("http://localhost:" + port);
+describe('something', () => {
+  const port: string = '3000';
+  const peticion = request.agent('http://localhost:' + port);
 
   /*it("/ POST", (done) => {
     peticion.post("/hoteles")
