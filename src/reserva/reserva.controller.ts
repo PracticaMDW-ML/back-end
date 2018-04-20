@@ -28,9 +28,4 @@ export class ReservaController {
     async updatePayment(@Param() param): Promise<Reserva> {
         return this.reservaService.updatePayment(param.id);
     }
-
-    @Delete(ReservaController.ID)
-    async delete(@Param() param): Promise<Reserva> {
-        return this.reservaService.delete(param.id);
-    }
 }

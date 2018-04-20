@@ -1,11 +1,11 @@
 import { expect } from 'chai';
 import request = require('supertest');
 
-describe('something', () => {
+describe('Cadena Controller', () => {
   const port: string = '3000';
   const peticion = request.agent('http://localhost:' + port);
 
-  it('should work', (done) => {
+  it('GET /cadenas', (done) => {
     peticion.get('/cadenas')
       .end((err, res) => {
         expect(1).to.equal(res.body.length);

@@ -27,7 +27,7 @@ describe('Reserva Controller', () => {
     it('PATCH /reservas', (done) => {
         peticion.patch('/reservas/5ad7a1b15b87860488c04229')
         .end((err, res) => {
-            expect(true).to.equal(res.body.abonada);
+            expect(1).to.equal(res.body.n);
             done();
           });
     });
