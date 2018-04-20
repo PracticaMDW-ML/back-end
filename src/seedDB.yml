@@ -1,20 +1,23 @@
 # Habitaciones
-Habitacion:
+habitacions:
 - &habitacion0
     servicios: [TV, Minibar, Plancha]
     precioHora: 12
-    imagen: https://www.fotohabitacion0.com
+    imagen: https://t-ec.bstatic.com/images/hotel/max1024x768/622/62263233.jpg
+    tipoHabitacion: SUITE
 - &habitacion1
     servicios: [Aire Acondicionado, Mascota]
     precioHora: 9
-    imagen: https://www.fotohabitacion1.com
+    imagen: https://s-ec.bstatic.com/images/hotel/max1024x768/359/35939159.jpg
+    tipoHabitacion: INDIVIDUAL
 - &habitacion2
     servicios: [TV, Canal+, Champan, Despertador]
     precioHora: 13
-    imagen: https://www.fotohabitacion2.com
+    imagen: https://s-ec.bstatic.com/images/hotel/max1024x768/622/62200988.jpg
+    tipoHabitacion: DOBLE
 
 # Usuarios
-Usuario:
+usuarios:
 - &usuario0
     usuario: diego69
     password: diego69
@@ -29,7 +32,7 @@ Usuario:
     correo: pabloLopez11@yahoo.com
     
 # Reservas
-Reserva:
+reservas:
 - &reserva0
     fechaEntrada: 2018-01-06 12:00:00
     fechaSalida: 2018-01-06 18:00:00  
@@ -53,7 +56,7 @@ Reserva:
     usuario: *usuario2
     
 # Hoteles
-Hotel:
+hotels:
 - &hotel0
     nombre: NH Madrid
     direccion: c/Alameda de Osuna
@@ -83,7 +86,7 @@ Hotel:
       - *habitacion2
       
 # Cadenas
-Cadena:
+cadenas:
 - &cadena0
     nombre: NH Group
     hotelesList:

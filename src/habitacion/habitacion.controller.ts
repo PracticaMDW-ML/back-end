@@ -7,7 +7,6 @@ import { TipoHabitacion } from 'habitacion/tipoHabitacion.enum';
 @Controller(HabitacionController.URL)
 export class HabitacionController {
     static URL: string = 'habitaciones';
-    static POBLAR: string = 'poblar';
     constructor(private readonly habitacionService: HabitacionService) {}
 
     @Post()
@@ -15,19 +14,19 @@ export class HabitacionController {
         this.habitacionService.create(habitacionDto);
     }
 
-    @Get('poblar')
+    @Get()
     async findAll(): Promise<Habitacion[]> {
-        this.createAuto();
         return this.habitacionService.findAll();
     }
 
-    createAuto() {
-        const habitacionDto: HabitacionDto = {
-            servicios: ['TV', 'Minibar', 'Aire Acondicionado'],
-            precioHora: 23,
-            imagen: 'http://www.sdfsdfsfdsfsddf.com',
-            tipoHabitacion: TipoHabitacion.INDIVIDUAL,
-        };
-        this.create(habitacionDto);
+    @Get('seedDB')
+     seedDB(): void  {
+        const dookie = require('dookie');
+        const fs = require('fs');
+        const yaml = require('js-yaml');
+        const contents = fs.readFileSync('./src/seedDB.yml');
+        const parsed = yaml.safeLoad(contents);
+        const mongodbUri = 'mongodb://seed:seed@ds247499.mlab.com:47499/hotelporhoras';
+        dookie.push(mongodbUri, parsed);
     }
 }
