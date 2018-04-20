@@ -2,7 +2,7 @@ import { Component } from '@nestjs/common';
 import { ReservaDto } from './reserva.dto';
 import { Reserva } from './reserva.interface';
 import { ReservaSchema } from './reserva.schema';
-import { InjectModel } from '@nestjs/mongoose';
+import { InjectModel, MongooseModule } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 
 @Component()
@@ -15,7 +15,7 @@ export class ReservaService {
     }
 
     async findAll(): Promise<Reserva[]> {
-        return await this.reservaModel.find().exec();
+        return await this.reservaModel.find();
     }
 
     async findById(id: string): Promise<Reserva> {
