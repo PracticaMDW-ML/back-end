@@ -5,9 +5,7 @@ import { UsuarioDto } from '../usuario/user.dto';
 @Controller(AuthController.URL)
 export class AuthController {
     static URL: string = 'auth';
-
     constructor(private readonly authService: AuthService) {}
-
     @Post()
     async authenticate(@Body() usuarioDto: UsuarioDto): Promise<any> {
         const exito: boolean = await this.authService.validateUser(usuarioDto.usuario);
