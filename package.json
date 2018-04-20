@@ -20,6 +20,7 @@
     "@nestjs/mongoose": "^3.0.1",
     "@nestjs/testing": "^4.5.5",
     "@nestjs/websockets": "^4.5.8",
+    "cors": "^2.8.4",
     "dookie": "^0.2.0",
     "express-status-monitor": "^1.0.1",
     "jasmine": "^3.1.0",
