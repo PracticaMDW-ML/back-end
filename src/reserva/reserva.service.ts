@@ -25,6 +25,7 @@ export class ReservaService {
     async updatePayment(id: string): Promise<Reserva>{
         const condition = {_id : id};
         const update =  {abonada: true};
-        return await this.reservaModel.update(condition, update);
+        this.reservaModel.update(condition, update);
+        return await this.reservaModel.findById(id).exec();
     }
 }

@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ReservaDto } from './reserva.dto';
 import { Reserva } from './reserva.interface';
 import { ReservaService } from './reserva.service';
@@ -27,5 +27,10 @@ export class ReservaController {
     @Patch(ReservaController.ID)
     async updatePayment(@Param() param): Promise<Reserva> {
         return this.reservaService.updatePayment(param.id);
+    }
+
+    @Delete(ReservaController.ID)
+    async delete(@Param() param): Promise<Reserva> {
+        return this.reservaService.delete(param.id);
     }
 }
