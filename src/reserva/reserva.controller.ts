@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { ReservaDto } from './reserva.dto';
 import { Reserva } from './reserva.interface';
 import { ReservaService } from './reserva.service';
