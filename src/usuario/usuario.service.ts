@@ -1,5 +1,5 @@
 import { Model } from 'mongoose';
-import { Component } from '@nestjs/common';
+import {Component, Inject} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Usuario } from './usuario.interface';
 import { UsuarioDto } from './user.dto';
@@ -7,7 +7,7 @@ import { UsuarioSchema } from './usuario.schema';
 
 @Component()
 export class UsuarioService {
-  constructor(@InjectModel(UsuarioSchema) private readonly usuarioModel: Model<Usuario>) {}
+  constructor(@Inject('UsuarioModelToken') private readonly usuarioModel: typeof Model) {}
 
   async create(userDto: UsuarioDto): Promise<Usuario> {
     const user = new this.usuarioModel(userDto);
