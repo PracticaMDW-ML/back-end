@@ -8,7 +8,7 @@ describe('Cadena Controller', () => {
   it('GET /cadenas', (done) => {
     peticion.get('/cadenas')
       .end((err, res) => {
-        expect(1).to.equal(res.body.length);
+        expect('NH Group').to.equal(res.body[0].nombre);
         done();
       });
   });
