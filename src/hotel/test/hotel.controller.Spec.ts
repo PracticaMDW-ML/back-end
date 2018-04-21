@@ -8,7 +8,7 @@ describe('Hotel Controller', () => {
   it('GET /hoteles', (done) => {
     peticion.get('/hoteles')
       .end((err, res) => {
-        expect(3).to.equal(res.body.length);
+        expect('NH Madrid').to.equal(res.body[0].nombre);
         done();
       });
   });

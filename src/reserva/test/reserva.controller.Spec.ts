@@ -10,7 +10,7 @@ describe('Reserva Controller', () => {
         peticion.get('/reservas')
         .end((err, res) => {
             expect(200).to.equal(res.status);
-            expect(3).to.equal(res.body.length);
+            expect('5ad7a1b15b87860488c04229').to.equal(res.body[0]._id);
             done();
         });
     });
