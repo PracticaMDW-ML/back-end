@@ -6,7 +6,8 @@ export class ReservaDto {
     readonly fechaSalida: Date;
     readonly precio: number;
     readonly abonada: boolean;
-    readonly usuario: Usuario;
     readonly habitacion: Habitacion;
+    readonly usuario: Usuario;
+    
 
 }
