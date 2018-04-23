@@ -1,17 +1,24 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Headers } from '@nestjs/common';
 import { ReservaDto } from './reserva.dto';
 import { Reserva } from './reserva.interface';
 import { ReservaService } from './reserva.service';
+import {AuthService} from 'auth/auth.service';
 
 @Controller(ReservaController.URL)
 export class ReservaController {
     static URL: string = 'reservas';
     static ID: string = ':id';
-    constructor(private readonly reservaService: ReservaService) {}
+    constructor(private readonly reservaService: ReservaService, private readonly authService: AuthService) {}
 
     @Post()
-    async create(@Body() reservaDto: ReservaDto) {
-        this.reservaService.create(reservaDto);
+    async create(@Headers() headers, @Body() reservaDto: ReservaDto) {
+        const token: string = headers.authorization;
+        const usuario: string = await this.authService.getUserValidatedFromToken(token);
+        if (usuario) {
+            return this.reservaService.create(reservaDto);
+        } else {
+            return null;
+        }
     }
 
     @Get()
@@ -25,7 +32,13 @@ export class ReservaController {
     }
 
     @Patch(ReservaController.ID)
-    async updatePayment(@Param() param): Promise<Reserva> {
-        return this.reservaService.updatePayment(param.id);
+    async updatePayment(@Headers() headers, @Param() param): Promise<Reserva> {
+        const token: string = headers.authorization;
+        const usuario: string = await this.authService.getUserValidatedFromToken(token);
+        if (usuario) {
+            return this.reservaService.updatePayment(param.id);
+        } else {
+            return null;
+        }
     }
 }

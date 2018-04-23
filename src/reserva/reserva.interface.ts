@@ -7,6 +7,7 @@ export interface Reserva extends Document {
     readonly fechaSalida: Date;
     readonly precio: number;
     readonly abonada: boolean;
-    readonly listaUsuarios: Usuario[];
-    readonly listaHabitaciones: Habitacion[];
+    readonly habitacion: Habitacion;
+    readonly usuario: Usuario;
+    
 }

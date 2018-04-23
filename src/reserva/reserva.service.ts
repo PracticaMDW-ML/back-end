@@ -4,6 +4,7 @@ import { Reserva } from './reserva.interface';
 import { ReservaSchema } from './reserva.schema';
 import { InjectModel, MongooseModule } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import {AuthService} from 'auth/auth.service';
 
 @Component()
 export class ReservaService {
@@ -15,7 +16,8 @@ export class ReservaService {
     }
 
     async findAll(): Promise<Reserva[]> {
-        return await this.reservaModel.find();
+        const list: ReservaDto[] = await this.reservaModel.find();
+        return list;
     }
 
     async findById(id: string): Promise<Reserva> {
