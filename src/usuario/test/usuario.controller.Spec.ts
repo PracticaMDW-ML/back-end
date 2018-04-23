@@ -9,7 +9,7 @@ describe('Usuarios Controller', () => {
         peticion.get('/usuarios')
         .end((err, res) => {
             expect(200).to.equal(res.status);
-            expect(3).to.equal(res.body.length);
+            expect('diego69').to.equal(res.body[0].usuario);
             done();
         });
     });
