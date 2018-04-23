@@ -11,7 +11,7 @@ export class AuthService {
 
     async createToken(usuario: string): Promise<any>  {
         const expiresIn = 60 * 30; // 30min
-        let payload = { sub: usuario };
+        let payload = { sub: usuario }; // NO PONER CONST
         const token = jwt.sign(payload, AuthService.secret, { expiresIn });
         return token;
         // console.log(typeof token);

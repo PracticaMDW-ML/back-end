@@ -12,13 +12,14 @@ export class AuthController {
         let token;
         if (exito) {
             token = await this.authService.createToken(usuarioDto.usuario);
+            console.log('Usuario autenticado con EXITO.');
         }
-        else{
-            this.usuarioService.create(usuarioDto);
-            token = await this.authService.createToken(usuarioDto.usuario);
-        }
+        // else{
+        //     this.usuarioService.create(usuarioDto);
+        //     token = await this.authService.createToken(usuarioDto.usuario);
+        // }
         return new Promise((resolve, reject) => {
-            resolve(token);
+            resolve({token});
         });
     }
 }
