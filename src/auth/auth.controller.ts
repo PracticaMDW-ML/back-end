@@ -8,18 +8,16 @@ export class AuthController {
     constructor(private readonly authService: AuthService, private readonly usuarioService: UsuarioService) {}
     @Post()
     async authenticate(@Body() usuarioDto: UsuarioDto): Promise<any> {
-        console.log('usuarioDto.usuario ' + usuarioDto.usuario);
         const exito: boolean = await this.authService.validateUser(usuarioDto.usuario);
-        console.log('exito: ' + exito);
         let token;
         if (exito) {
             token = await this.authService.createToken(usuarioDto.usuario);
+            console.log('Usuario autenticado con EXITO.');
         }
         // else{
         //     this.usuarioService.create(usuarioDto);
         //     token = await this.authService.createToken(usuarioDto.usuario);
         // }
-        console.log('token: ' + token);
         return new Promise((resolve, reject) => {
             resolve(token);
         });
