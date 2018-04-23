@@ -5,6 +5,6 @@ export const ReservaSchema = new mongoose.Schema({
     fechaSalida: Date,
     precio: Number,
     abonada: Boolean,
-    listaUsuarios: { type: mongoose.Schema.ObjectId, ref: 'Usuario' },
-    listaHabitaciones: { type: mongoose.Schema.ObjectId, ref: 'Habitacion' },
+    usuarios: { type: mongoose.Schema.ObjectId, ref: 'Usuario' },
+    habitacions: { type: mongoose.Schema.ObjectId, ref: 'Habitacion' },
 });
