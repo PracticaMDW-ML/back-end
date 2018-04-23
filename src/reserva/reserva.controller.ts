@@ -11,8 +11,14 @@ export class ReservaController {
     constructor(private readonly reservaService: ReservaService, private readonly authService: AuthService) {}
 
     @Post()
-    async create(@Body() reservaDto: ReservaDto) {
-        this.reservaService.create(reservaDto);
+    async create(@Headers() headers, @Body() reservaDto: ReservaDto) {
+        const token: string = headers.authorization;
+        const usuario: string = await this.authService.getUserValidatedFromToken(token);
+        if (usuario) {
+            return this.reservaService.create(reservaDto);
+        } else {
+            return null;
+        }
     }
 
     @Get()
@@ -29,7 +35,6 @@ export class ReservaController {
     async updatePayment(@Headers() headers, @Param() param): Promise<Reserva> {
         const token: string = headers.authorization;
         const usuario: string = await this.authService.getUserValidatedFromToken(token);
-        console.log(usuario);
         if (usuario) {
             return this.reservaService.updatePayment(param.id);
         } else {

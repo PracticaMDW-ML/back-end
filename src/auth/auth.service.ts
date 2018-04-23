@@ -36,14 +36,9 @@ export class AuthService {
 
     async getUserValidatedFromToken(token: string): Promise<string> {
         const usuario: string = null;
-        console.log(token);
-        console.log(AuthService.secret);
         jwt.verify(token, AuthService.secret, (err, decoded) => {
             if (!err) {
-                console.log("No hay error");
                 const payload = jwt.decode(token, AuthService.secret);
-                console.log(payload);
-                console.log(payload.sub);
                 return new Promise((resolve, reject) => {
                     resolve(payload.sub);
                 });
