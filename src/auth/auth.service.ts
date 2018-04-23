@@ -26,6 +26,7 @@ export class AuthService {
     }
 
     async validateUser(usuario: string): Promise<boolean> {
+        console.log('usuario ' + usuario);
         const usuarioDocument: Usuario = await this.usuarioService.findByUsuario(usuario);
         if (usuarioDocument) {
             return usuarioDocument.usuario === usuario;
