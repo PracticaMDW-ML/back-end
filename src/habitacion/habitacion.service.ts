@@ -18,4 +18,8 @@ export class HabitacionService {
     async findAll(): Promise<Habitacion[]> {
         return await this.habitacionModel.find().exec();
     }
+
+    async findById(id: string): Promise<Habitacion[]> {
+        return await this.habitacionModel.findById(id).exec();
+    }
 }
