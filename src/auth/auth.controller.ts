@@ -19,7 +19,7 @@ export class AuthController {
         //     token = await this.authService.createToken(usuarioDto.usuario);
         // }
         return new Promise((resolve, reject) => {
-            resolve(token);
+            resolve({token});
         });
     }
 }
