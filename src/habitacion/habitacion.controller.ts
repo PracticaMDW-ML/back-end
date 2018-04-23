@@ -7,6 +7,7 @@ import { TipoHabitacion } from 'habitacion/tipoHabitacion.enum';
 @Controller(HabitacionController.URL)
 export class HabitacionController {
     static URL: string = 'habitaciones';
+    static ID: string = ':id';
     constructor(private readonly habitacionService: HabitacionService) {}
 
     @Post()
@@ -17,6 +18,11 @@ export class HabitacionController {
     @Get()
     async findAll(): Promise<Habitacion[]> {
         return this.habitacionService.findAll();
+    }
+
+    @Get(HabitacionController.ID)
+    async findOne(@Param() param): Promise<Habitacion[]> {
+        return this.habitacionService.findById(param.id);
     }
 
     @Get('seedDB')
