@@ -18,8 +18,8 @@ const MONGODB_URI = `mongodb://${USER_BD}:${PASSWORD_BD}@ds247499.mlab.com:47499
       HabitacionModule,
       HotelModule,
       UsuarioModule,
-      ReservaModule,
       AuthModule,
+      ReservaModule,
   ],
 })
 export class AppModule {

@@ -1,5 +1,5 @@
 import * as jwt from 'jsonwebtoken';
-import { Component } from '@nestjs/common';
+import {Component, forwardRef, Inject} from '@nestjs/common';
 import { UsuarioService } from '../usuario/usuario.service';
 import { Usuario } from '../usuario/usuario.interface';
 
@@ -11,8 +11,18 @@ export class AuthService {
 
     async createToken(usuario: string): Promise<any>  {
         const expiresIn = 60 * 30; // 30min
-        const payload = { usuario };
-        return jwt.sign(payload, AuthService.secret, { expiresIn });
+        let payload = { sub: usuario };
+        const token = jwt.sign(payload, AuthService.secret, { expiresIn });
+        return token;
+        // console.log(typeof token);
+        // console.log(payload);
+        // jwt.verify(token, AuthService.secret, (err, decoded) => {
+        //     if (!err) {
+        //         console.log("No hay error");
+        //         const payload = jwt.decode(token, AuthService.secret);
+        //         console.log(payload);
+        //     }
+        // });
     }
 
     async validateUser(usuario: string): Promise<boolean> {
@@ -24,17 +34,22 @@ export class AuthService {
         }
     }
 
-    /*
-     async getUserFromToken(token: string): Promise<string> {
-        const usuario = null;
+    async getUserValidatedFromToken(token: string): Promise<string> {
+        const usuario: string = null;
+        console.log(token);
+        console.log(AuthService.secret);
         jwt.verify(token, AuthService.secret, (err, decoded) => {
             if (!err) {
+                console.log("No hay error");
                 const payload = jwt.decode(token, AuthService.secret);
-                return payload.usuario;
+                console.log(payload);
+                console.log(payload.sub);
+                return new Promise((resolve, reject) => {
+                    resolve(payload.sub);
+                });
             }
         });
-        console.log(usuario);
-        return usuario;
+        return null;
     }
-     */
+
 }
