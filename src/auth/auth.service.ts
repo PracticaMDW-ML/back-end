@@ -23,4 +23,18 @@ export class AuthService {
             return false;
         }
     }
+
+    /*
+     async getUserFromToken(token: string): Promise<string> {
+        const usuario = null;
+        jwt.verify(token, AuthService.secret, (err, decoded) => {
+            if (!err) {
+                const payload = jwt.decode(token, AuthService.secret);
+                return payload.usuario;
+            }
+        });
+        console.log(usuario);
+        return usuario;
+    }
+     */
 }

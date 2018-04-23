@@ -15,7 +15,9 @@ export class ReservaService {
     }
 
     async findAll(): Promise<Reserva[]> {
-        return await this.reservaModel.find();
+        const list: ReservaDto[] = await this.reservaModel.find();
+        console.log(list[0]);
+        return list;
     }
 
     async findById(id: string): Promise<Reserva> {
