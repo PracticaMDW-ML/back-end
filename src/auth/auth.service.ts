@@ -35,16 +35,16 @@ export class AuthService {
     }
 
     async getUserValidatedFromToken(token: string): Promise<string> {
-        const usuario: string = null;
+        let usuario: string = null;
         jwt.verify(token, AuthService.secret, (err, decoded) => {
             if (!err) {
                 const payload = jwt.decode(token, AuthService.secret);
-                return new Promise((resolve, reject) => {
-                    resolve(payload.sub);
-                });
+                usuario = payload.sub;
+            } else {
+                console.log('Error a la hora de verificar el token en "auth.service.ts".');
             }
         });
-        return null;
+        return usuario;
     }
 
 }

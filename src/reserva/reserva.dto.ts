@@ -7,7 +7,5 @@ export class ReservaDto {
     readonly precio: number;
     readonly abonada: boolean;
     readonly habitacion: Habitacion;
-    readonly usuario: Usuario;
-    
-
+    usuario?: Usuario;
 }

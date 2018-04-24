@@ -15,7 +15,7 @@ export class ReservaController {
         const token: string = headers.authorization;
         const usuario: string = await this.authService.getUserValidatedFromToken(token);
         if (usuario) {
-            return this.reservaService.create(reservaDto);
+            return this.reservaService.create(reservaDto, usuario);
         } else {
             return null;
         }
