@@ -17,6 +17,7 @@ export class AuthController {
         // else{
         //     this.usuarioService.create(usuarioDto);
         //     token = await this.authService.createToken(usuarioDto.usuario);
+        //     console.log('Usuario autenticado con EXITO.');
         // }
         return new Promise((resolve, reject) => {
             resolve({token});
