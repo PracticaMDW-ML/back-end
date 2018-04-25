@@ -7,6 +7,7 @@ import { Usuario } from './usuario.interface';
 export class UsuarioController {
     static URL: string = 'usuarios';
     static LOGIN: string = 'login';
+    static USUARIO: string = ':usuario';
 
     constructor(private readonly usuarioService: UsuarioService) {}
 
@@ -18,5 +19,10 @@ export class UsuarioController {
     @Get()
     async findAll(): Promise<Usuario[]> {
         return this.usuarioService.findAll();
+    }
+
+    @Get(UsuarioController.USUARIO)
+    async findOne(@Param() param): Promise<Usuario> {
+        return this.usuarioService.findByUsuario(param.usuario);
     }
 }

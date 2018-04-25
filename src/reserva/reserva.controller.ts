@@ -11,11 +11,11 @@ export class ReservaController {
     constructor(private readonly reservaService: ReservaService, private readonly authService: AuthService) {}
 
     @Post()
-    async create(@Headers() headers, @Body() reservaDto: ReservaDto) {
+    async create(@Headers() headers, @Body() reservaDto: ReservaDto): Promise<Reserva> {
         const token: string = headers.authorization;
         const usuario: string = await this.authService.getUserValidatedFromToken(token);
         if (usuario) {
-            return this.reservaService.create(reservaDto);
+            return this.reservaService.create(reservaDto, usuario);
         } else {
             return null;
         }
