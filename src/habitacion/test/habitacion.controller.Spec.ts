@@ -9,7 +9,7 @@ describe('Habitacion Controller', () => {
         peticion.get('/habitaciones')
         .end((err, res) => {
             expect(200).to.equal(res.status);
-            expect('5ad7a1b15b87860488c04223').to.equal(res.body[0]._id);
+            expect('5ae0692ca0cfa91894ae5c4f').to.equal(res.body[0]._id);
             done();
         });
     });
