@@ -33,12 +33,6 @@ export class ReservaController {
 
     @Patch(ReservaController.ID)
     async updatePayment(@Headers() headers, @Param() param): Promise<Reserva> {
-        const token: string = headers.authorization;
-        const usuario: string = await this.authService.getUserValidatedFromToken(token);
-        if (usuario) {
-            return this.reservaService.updatePayment(param.id);
-        } else {
-            return null;
-        }
+        return this.reservaService.updatePayment(param.id);
     }
 }

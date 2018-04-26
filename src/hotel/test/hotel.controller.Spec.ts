@@ -14,7 +14,7 @@ describe('Hotel Controller', () => {
   });
 
   it('GET /hoteles/:id', (done) => {
-    peticion.get('/hoteles/5ad7a1b15b87860488c0422c')
+    peticion.get('/hoteles/5ae0692ca0cfa91894ae5c58')
       .end((err, res) => {
         expect('NH Madrid').to.equal(res.body.nombre);
         done();
